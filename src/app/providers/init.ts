@@ -13,3 +13,4 @@ import "@/shared/utils/fabrics/fabrics";
 //////////////////  Модели страниц  /////////////////////
 /////////////////////////////////////////////////////////
 import "@/pages/BasePage/model";
+import "@/pages/FormPage/model";

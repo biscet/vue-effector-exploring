@@ -56,5 +56,6 @@ sample({
 
 sample({
   clock: $postsPage,
+  filter: $isBasePage,
   target: getPostsFn,
 });

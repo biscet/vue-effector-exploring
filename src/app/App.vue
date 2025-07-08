@@ -3,7 +3,7 @@ import type { AppGateType } from "@/app/providers/models/gates/types";
 import { useGate } from "effector-vue/composition";
 import { AppGate } from "@/app/providers/models/gates/gates";
 import { useRouter } from "vue-router";
-import Navigate from "@/entities/components/Navigate.vue";
+import { Navigate, NavBar } from "@/entities/components";
 import { onMounted, ref } from "vue";
 
 const router = useRouter();
@@ -30,7 +30,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <nav-bar />
   <router-view></router-view>
-
   <navigate />
 </template>

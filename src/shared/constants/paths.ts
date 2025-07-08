@@ -8,6 +8,10 @@ export const PATHS: Record<string, RouteType> = {
     PATH: "/",
     NAME: "based",
   },
+  FORM: {
+    PATH: "/form",
+    NAME: "form",
+  },
   NOT_FOUND: {
     PATH: "/:pathMatch(.*)*",
     NAME: "not-found",
