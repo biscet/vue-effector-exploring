@@ -3,7 +3,6 @@ import { combine, createDomain, sample } from "effector";
 import { AppGate } from "@/app/providers/models/gates/gates";
 import { get, isEmpty } from "@/shared/lib/lodash";
 import { spread } from "patronum";
-import router from "@/app/providers/router";
 
 const historyDomain = createDomain("historyDomain");
 
@@ -61,5 +60,7 @@ $pushHistory.on(pushHistoryFn, (_, newPath) => newPath);
 ///////////////////  Через router от vue  ///////////////
 /////////////////////////////////////////////////////////
 export const pushHistoryFx = historyDomain.createEffect((path: string) => {
-  return router.push(path);
+  return import("@/app/providers/router").then(({ default: router }) =>
+    router.push(path)
+  );
 });

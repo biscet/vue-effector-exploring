@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { AppGateType } from "@/app/providers/models/gates/types";
 import { useGate } from "effector-vue/composition";
 import { AppGate } from "@/app/providers/models/gates/gates";
 import { useRouter } from "vue-router";
-import { AppGateType } from "./providers/models/gates/types";
 import Navigate from "@/entities/components/Navigate.vue";
 import { onMounted, ref } from "vue";
 

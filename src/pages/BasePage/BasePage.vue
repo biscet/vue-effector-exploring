@@ -1,12 +1,25 @@
 <script setup lang="ts">
-import { useStore } from "effector-vue/composition";
-import { $postsList } from "@/pages/BasePage/model";
+import { useUnit } from "effector-vue/composition";
+import {
+  $isLoadingPosts,
+  $postsList,
+  $postsPage,
+  changePostsPageFn,
+} from "@/pages/BasePage/model";
 
-const posts = useStore($postsList);
+const [postsList, changePostsPage, postsPage, isLoadingPosts] = useUnit([
+  $postsList,
+  changePostsPageFn,
+  $postsPage,
+  $isLoadingPosts,
+]);
 </script>
 
 <template>
-  <div v-for="post in posts" :key="post.id">
+  <div v-for="post in postsList" :key="post.id">
     {{ post.body }}
   </div>
+  <button @click="changePostsPage(postsPage + 1)" :disabled="isLoadingPosts">
+    next
+  </button>
 </template>
