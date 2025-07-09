@@ -8,7 +8,7 @@ import {
 } from "@/shared/utils/fabrics/fabrics";
 import { get } from "@/shared/lib/lodash";
 import { pending } from "patronum";
-import { POST_FIRST_PAGE } from "@/shared/constants/query";
+import { POST_FIRST_PAGE, POST_LIST_SIZE } from "@/shared/constants/query";
 
 const basePageDomain = createDomain("basePageDomain");
 
@@ -36,7 +36,10 @@ $postsList
   .reset(resetPostsStoreFn);
 
 $totalPostsPageCount
-  .on(getPostsFx.doneData, (_, res) => get(res, "headers.x-total-count", 1))
+  .on(getPostsFx.doneData, (_, res) => {
+    const totalCount = Number(get(res, "headers.x-total-count", 1));
+    return Math.ceil(totalCount / POST_LIST_SIZE);
+  })
   .reset(resetPostsStoreFn);
 
 $postsPage.on(changePostsPageFn, (_, page) => page).reset(resetPostsStoreFn);
