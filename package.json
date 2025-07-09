@@ -13,7 +13,6 @@
     "effector-forms-vue": "1.0.1",
     "effector-vue": "23.1.1",
     "patronum": "2.3.0",
-    "pinia": "3.0.3",
     "vue": "3.5.13",
     "vue-router": "4.5.1"
   },
