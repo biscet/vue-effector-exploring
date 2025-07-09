@@ -1,4 +1,4 @@
-import type { Rule } from "effector-forms";
+import type { Rule } from "effector-forms-vue";
 import { isEmpty } from "@/shared/lib/lodash";
 
 export const rules = {

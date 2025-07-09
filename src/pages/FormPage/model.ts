@@ -1,7 +1,7 @@
 import { FORM_PAGE_FIELDS } from "@/shared/constants/forms";
 import { rules } from "@/shared/lib/rules/rules";
 import { createDomain, sample } from "effector";
-import { createForm } from "effector-forms";
+import { createForm } from "effector-forms-vue";
 
 const formPageDomain = createDomain("formPageDomain");
 

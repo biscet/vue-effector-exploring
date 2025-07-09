@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  makeInputBinder,
-  useForm,
-} from "@/shared/lib/effector-forms/effector-forms";
+import { makeInputBinder, useForm } from "effector-forms-vue";
 import { userForm } from "./model";
 
 const form = useForm(userForm);
